@@ -1,0 +1,37 @@
+<div class="jumbotron">
+  <h1 class="display-4">Hello {{username}} Welcome!</h1>
+  <p class="lead">Create New Post:</p>
+  
+  <div class="input-group mb-3 new-post-form">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">Title:</span>
+  </div>
+  <input type="text" class="post-title" id="post-title" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">Description:</span>
+  </div>
+  <textarea class="form-input" id="post-desc" class="post-desc" ></textarea>
+</div>
+
+<button type="submit" class="btn btn-primary btn-block mb-4">Create</button>
+</div>
+
+{{if posts.length}}
+<div class="input-group-prepend post-list">
+    <span class="input-group-text" id="inputGroup-sizing-default">Current Posts:</span>
+    {{#each posts as |post|}}
+    <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+  </div>
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <button class="btn btn-primary btn-block mb-4" data-id="{{post.id}}">DELETE</button>
+  </div>
+  </div>
+  {{/each}}
+  </div>
+  {{/if}}
+  </div>
+<script src="/js/dashboard.js"></script>
