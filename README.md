@@ -48,6 +48,14 @@ WHEN I am idle on the site for more than a set time
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 ```
 
-URL of the deployed application -
+![Screenshot](Images/Home.JPG)
+![Screenshot](Images/Homepage.JPG)
+![Screenshot](Images/loggedin.JPG)
+![Screenshot](Images/login.JPG)
+![Screenshot](Images/post.JPG)
+![Screenshot](Images/Postcreated.JPG)
 
-GitHub repository - 
+
+URL of the deployed application - https://kk-techblog.herokuapp.com/
+
+GitHub repository - https://github.com/Kaviambi/TechBlog.git
