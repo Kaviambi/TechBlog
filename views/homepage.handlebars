@@ -1,21 +1,21 @@
-{{#each posts as |post|}}
+{{#each blogs as |blog|}}
 
 <div class="row">
     <div class="container postArea">
-        <h2><a href="/post/{{post.id}}">{{post.title}}</a></h2>
+        <h2><a href="/blog/{{blog.id}}">{{blog.title}}</a></h2>
     </div>
 </div>
 
 <div class="col-4">
-    <p>Created by: {{post.user.username}}
+    <p>Created by: {{blog.user.username}}
     on
-    {{format_date post.date_created}}
+    {{format_date}}
     </p>
 </div>
 
-<div class="postdescription">
+<div class="blogdesc">
     <p>
-        {{post.description}}
+        {{blog.description}}
     </p>
 </div>
 {{/each}}

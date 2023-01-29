@@ -1,37 +1,34 @@
 <div class="jumbotron">
-  <h1 class="display-4">Hello {{username}} Welcome!</h1>
+  <h1 class="display-4">Hello Welcome!</h1>
   <p class="lead">Create New Post:</p>
-  
-  <div class="input-group mb-3 new-post-form">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-default">Title:</span>
-  </div>
-  <input type="text" class="post-title" id="post-title" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 </div>
 
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-default">Description:</span>
+<form class="form new-blog-form">
+  <div>
+    <input class="form-input" type="text" id="blog-title" name="blog-title"/>
   </div>
-  <textarea class="form-input" id="post-desc" class="post-desc" ></textarea>
-</div>
 
-<button type="submit" class="btn btn-primary btn-block mb-4">Create</button>
-</div>
+  <div>
+    <textarea class="form-input" id="blog-desc" name="blog-desc"></textarea>
+  </div>
 
-{{if posts.length}}
-<div class="input-group-prepend post-list">
-    <span class="input-group-text" id="inputGroup-sizing-default">Current Posts:</span>
-    {{#each posts as |post|}}
-    <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+  <div class="form-group">
+    <button type="submit" class="btn btn-secondary">Create</button>
   </div>
-  <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <button class="btn btn-primary btn-block mb-4" data-id="{{post.id}}">DELETE</button>
-  </div>
+</form>
+
+{{#if blogs.length}}
+<div class="blog-list">
+  <span>Current Posts:</span>
+  {{#each blogs as |blog|}}
+  <div>
+  <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+
+<div class="mb-3">
+    <button type="click" class="btn btn-secondary" data-id="{{blog.id}}">DELETE</button>
   </div>
   {{/each}}
-  </div>
-  {{/if}}
-  </div>
+</div>
+{{/if}}
+</div>
 <script src="/js/dashboard.js"></script>
